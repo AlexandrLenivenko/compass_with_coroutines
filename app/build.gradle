@@ -1,0 +1,12 @@
+apply plugin: 'com.android.application'
+apply from: '../common.gradle'
+apply from: '../dependency.gradle'
+
+def libs = ext.libraries
+
+dependencies {
+    implementation "androidx.constraintlayout:constraintlayout:${libs.constraintLayout}"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:${libs.lifecycle_runtime_ktx}"
+
+    implementation project(path: ':compass_server')
+}

@@ -1,0 +1,22 @@
+ext {
+
+    configuration = [
+            packageName             : "com.city.quiz",
+            buildToolsVersion       : "29.0.0",
+            compileSdkVersion       : 29,
+            targetSdkVersion        : 29,
+            minSdkVersion           : 21,
+            versionCode             : 1,//getProdVersionCode,
+            versionName             : "1.0" //getProdVersionName
+    ]
+
+    libraries = [
+            constraintLayout        : '1.1.3',
+            androidXVersion         : '1.1.0',
+            ktx                     : '1.1.0',
+            koin                    : '2.0.1',
+            kotlin_version          : '1.3.50',
+            coroutines              : '1.0.1',
+            lifecycle_runtime_ktx   : '2.2.0-alpha05'
+    ]
+}

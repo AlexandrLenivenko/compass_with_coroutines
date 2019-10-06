@@ -1,0 +1,48 @@
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply from: '../dependency.gradle'
+
+def libs = ext.libraries
+def conf = ext.configuration
+
+android {
+    compileSdkVersion conf.compileSdkVersion
+    buildToolsVersion conf.buildToolsVersion
+
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        minSdkVersion conf.minSdkVersion
+        targetSdkVersion conf.targetSdkVersion
+        versionCode conf.versionCode
+        versionName conf.versionName
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            minifyEnabled false
+        }
+        release {
+            debuggable false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:${libs.androidXVersion}"
+    implementation "androidx.core:core-ktx:${libs.ktx}"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.koin:koin-android-viewmodel:${libs.koin}"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:${libs.coroutines}"
+}
+repositories {
+    mavenCentral()
+}
