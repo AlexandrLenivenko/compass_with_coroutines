@@ -1,0 +1,22 @@
+signingConfigs {
+    debug {
+        keyAlias 'degub.key'
+        keyPassword 'android'
+        storePassword 'android'
+        storeFile file('../keystore/AndroidAIP.debug.jks')
+    }
+    release {
+        keyAlias 'production.key'
+        keyPassword 'android'
+        storePassword 'android'
+        storeFile file('../keystore/AndroidAIP.production.jks')
+    }
+}
+buildTypes {
+    debug {
+        signingConfig signingConfigs.debug
+    }
+    release {
+        signingConfig signingConfigs.release
+    }
+}

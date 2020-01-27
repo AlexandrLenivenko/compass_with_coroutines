@@ -1,6 +1,7 @@
 apply plugin: 'com.android.application'
 apply from: '../common.gradle'
 apply from: '../dependency.gradle'
+apply from: "./signingConfig.gradle", to:android
 
 def libs = ext.libraries
 
