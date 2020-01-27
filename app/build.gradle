@@ -8,5 +8,8 @@ dependencies {
     implementation "androidx.constraintlayout:constraintlayout:${libs.constraintLayout}"
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:${libs.lifecycle_runtime_ktx}"
 
+    // https://mvnrepository.com/artifact/junit/junit
+    testImplementation group: 'junit', name: 'junit', version: '4.13'
+
     implementation project(path: ':compass_server')
 }
