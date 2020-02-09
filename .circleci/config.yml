@@ -28,7 +28,7 @@ jobs:
             name: Upload to AppCenter
             command: |
               echo "Hello "
-              sudo apt-get install -g appcenter-cli
+              sudo apt-get install appcenter-cli
 
 
       #      - run:
