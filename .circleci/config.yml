@@ -30,7 +30,7 @@ jobs:
             curl -X POST -L \
             -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
             -F "metadata={name : '$apk_name'};type=application/json;charset=UTF-8" \
-            -F "file=@apk_name;type=application/zip" \
+            -F "file=apk_name;type=application/zip" \
             "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart"
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/outputs/apk/debug
