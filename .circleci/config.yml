@@ -22,7 +22,7 @@ jobs:
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
           name: Build apk
-          command: ./gradlew assembleDebug
+          command: ./gradlew assembleRelease
       - run:
           name: Upload to Google Drive
           command: |
