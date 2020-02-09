@@ -26,7 +26,7 @@ jobs:
 
       - run:
             name: Upload to AppCenter
-            commant:
+            command: |
               npm install -g appcenter-cli
 
 #      - run:
