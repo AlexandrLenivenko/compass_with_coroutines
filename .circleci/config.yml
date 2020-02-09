@@ -27,11 +27,13 @@ jobs:
           name: Upload to Google Drive
           command: |
             export apk_name="build-${CIRCLE_BRANCH}-`git rev-parse --short HEAD`.apk"
-            curl -X POST -L \
-            -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
-            -F "metadata={name : '$apk_name'};type=application/json;charset=UTF-8/Content-Length=$apk.size" \
-            -F "file=apk_name;type=application/apk" \
-            "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart"
+            curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-API-Token: ab00fd82-00fe-4e26-8478-41f9e95d23ac' 'https://api.appcenter.ms/v0.1/apps/aslenivenko-gmail.com/Compass/release_uploads'
+#            curl -X POST -L \
+#            -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
+#            -F "metadata={name : '$apk_name'};type=application/json;charset=UTF-8/Content-Length=$apk.size" \
+#            -F "file=apk_name;type=application/apk" \
+#            "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart"
+
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/outputs/apk/debug
           destination: reports
