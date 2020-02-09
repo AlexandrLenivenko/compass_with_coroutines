@@ -31,7 +31,7 @@ jobs:
                                                                                                                                                                                   "release_id": 1,
                                                                                                                                                                                   "build_version": "11",
                                                                                                                                                                                   "build_number": "111"
-                                                                                                                                                                                }' 'https://api.appcenter.ms/v0.1/apps/AlexandrLenivenko/Compass/release_uploads'
+                                                                                                                                                                                }' 'https://api.appcenter.ms/v0.1/apps/AlexandrLenivenko/Compass'
 #            curl -X POST -L \
 #            -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
 #            -F "metadata={name : '$apk_name'};type=application/json;charset=UTF-8/Content-Length=$apk.size" \
