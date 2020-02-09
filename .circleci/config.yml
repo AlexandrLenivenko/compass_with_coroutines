@@ -26,15 +26,15 @@ jobs:
       - run:
           name: Build apk
           command: ./gradlew assembleDebug
-  - run:
-      name: Upload to Google Drive
-      command: |
-        export apk_name="build-${CIRCLE_BRANCH}-`git rev-parse --short HEAD`.apk"
-        curl -X POST -L \
-        -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
-        -F "metadata={name : 'backup.zip'};type=application/json;charset=UTF-8" \
-        -F "file=@backup.zip;type=application/zip" \
-        "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart"
+      - run:
+          name: Upload to Google Drive
+          command: |
+            export apk_name="build-${CIRCLE_BRANCH}-`git rev-parse --short HEAD`.apk"
+            curl -X POST -L \
+            -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
+            -F "metadata={name : 'backup.zip'};type=application/json;charset=UTF-8" \
+            -F "file=@backup.zip;type=application/zip" \
+            "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart"
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/outputs/apk/debug
           destination: reports
