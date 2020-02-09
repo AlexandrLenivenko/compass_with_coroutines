@@ -29,7 +29,7 @@ jobs:
             export apk_name="build-${CIRCLE_BRANCH}-`git rev-parse --short HEAD`.apk"
             curl -X POST -L \
             -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
-            -F "metadata={name : '$apk_name'};type=application/json;charset=UTF-8" \
+            -F "metadata={name : '$apk_name'};type=application/json;charset=UTF-8/Content-Length=$apk.size" \
             -F "file=apk_name;type=application/apk" \
             "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart"
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
