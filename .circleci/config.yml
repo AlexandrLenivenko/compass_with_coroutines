@@ -27,9 +27,28 @@ jobs:
       - run:
             name: Upload to AppCenter
             command: |
-              npm install -g appcenter-cli
+              echo "Hello "
+              install -g appcenter-cli
 
-#      - run:
+              echo "Find build artifacts"
+              apkPath=$(find build -name "*.apk" | head -1)
+              echo "Found apk at $apkPath"
+
+              if [[ -z ${apkPath} ]]
+              then
+                  echo "No apks were found, skip publishing to App Center"
+              else
+                  echo "Publishing $apkPath to App Center"
+                  appcenter distribute release \
+                      --group Collaborators \
+                      --file "${apkPath}" \
+                      --release-notes 'App submission via Codemagic' \
+                      --app AlexandrLenivenko/Compass \
+                      --token "$4b5163047afa93f918dbab9c5cbd94d103f5a769" \
+                      --quiet
+
+
+      #      - run:
 #          name: Upload to Google Drive
 #          command: |
 #            curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-API-Token: 4b5163047afa93f918dbab9c5cbd94d103f5a769' --data '{
