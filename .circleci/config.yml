@@ -27,11 +27,11 @@ jobs:
           name: Upload to Google Drive
           command: |
             curl -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' --header 'X-API-Token: 4b5163047afa93f918dbab9c5cbd94d103f5a769' --data '{
-#            export app_name="build-${CIRCLE_BRANCH}-`git rev-parse --short HEAD`.apk"
                                                                                                                                                                                   "release_id": 1,
                                                                                                                                                                                   "build_version": "11",
                                                                                                                                                                                   "build_number": "111"
                                                                                                                                                                                 }' 'https://api.appcenter.ms/v0.1/apps/AlexandrLenivenko/Compass/release_uploads'
+#            export app_name="build-${CIRCLE_BRANCH}-`git rev-parse --short HEAD`.apk"
 #            curl -X POST -L \
 #            -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
 #            -F "metadata={name : '$apk_name'};type=application/json;charset=UTF-8/Content-Length=$apk.size" \
