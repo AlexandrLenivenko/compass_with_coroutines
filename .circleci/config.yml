@@ -29,6 +29,10 @@ jobs:
             command: |
               echo "Hello "
               curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+              echo 'Run the install command.'
+              nvm install node
+              echo 'Run the use command.'
+              nvm use node
               echo 'Installing App Center CLI tools'
               npm install -g appcenter-cli
 
