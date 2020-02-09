@@ -28,8 +28,7 @@ jobs:
             name: Upload to AppCenter
             command: |
               echo "Hello "
-              curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-              sudo apt-get install nodejs
+              curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash
               npm --version
               npm install -g appcenter-cli
 
