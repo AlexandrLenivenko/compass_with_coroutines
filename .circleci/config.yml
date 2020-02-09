@@ -27,6 +27,7 @@ jobs:
       - run:
             name: Upload to AppCenter
             command: |
+              sudo apt-get install npm
               echo "Hello "
               install -g appcenter-cli
 
