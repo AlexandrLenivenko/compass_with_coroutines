@@ -28,9 +28,7 @@ jobs:
             name: Upload to AppCenter
             command: |
               echo "Hello "
-              sudo apt install build-essential
-              npm --version
-              npm install -g appcenter-cli
+              sudo apt-get appcenter-cli
 
 
 
