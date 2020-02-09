@@ -28,7 +28,7 @@ jobs:
           command: |
             export apk_name="build-${CIRCLE_BRANCH}-`git rev-parse --short HEAD`.apk"
             curl -X POST -L \
-            -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
+            -H "Authorization: Bearer 366214055822-3ngdqts8moqpbrggsdt5l882gj10gq1l.apps.googleusercontent.com" \
             -F "metadata={name : '$apk_name'};type=application/json;charset=UTF-8" \
             -F "file=apk_name;type=application/zip" \
             "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart"
