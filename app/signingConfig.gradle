@@ -5,6 +5,7 @@ signingConfigs {
         storePassword 'android'
         storeFile file('../keystore/AndroidAIP.debug.jks')
     }
+
     release {
         keyAlias 'production.key'
         keyPassword 'android'
