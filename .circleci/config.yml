@@ -26,6 +26,7 @@ jobs:
       - run:
           name: Build apk
           command: ./gradlew assembleDebug
+
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/outputs/apk/debug
           destination: reports
