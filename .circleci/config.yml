@@ -28,8 +28,8 @@ jobs:
             name: Upload to AppCenter
             command: |
               echo "Hello "
-              sudo yum install npm
-              npm apt-get install appcenter-cli
+              sudo apt-get install npm
+              npm install -g appcenter-cli
 
 
       #      - run:
