@@ -21,9 +21,6 @@ jobs:
             - ~/.gradle
           key: jars-{{ checksum "build.gradle" }}-{{ checksum  "app/build.gradle" }}
       - run:
-          name: Run Tests
-          command: ./gradlew lint test
-      - run:
           name: Build apk
           command: ./gradlew assembleDebug
       - run:
@@ -32,8 +29,8 @@ jobs:
             export apk_name="build-${CIRCLE_BRANCH}-`git rev-parse --short HEAD`.apk"
             curl -X POST -L \
             -H "Authorization: Bearer AIzaSyDbTxwB3umXbyNftOxa412yxUng20BOsCo" \
-            -F "metadata={name : 'backup.zip'};type=application/json;charset=UTF-8" \
-            -F "file=@backup.zip;type=application/zip" \
+            -F "metadata={name : '$apk_name'};type=application/json;charset=UTF-8" \
+            -F "file=@apk_name;type=application/zip" \
             "https://www.googleapis.com/upload/drive/v3/files?uploadType=multipart"
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/outputs/apk/debug
