@@ -28,8 +28,8 @@ jobs:
             name: Upload to AppCenter
             command: |
               echo "Hello "
-              sudo apt install npm
-              sudo npm i -g npm@latest
+              curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+              sudo apt-get install -y nodejs
               npm -v
               npm install -g appcenter-cli
 
