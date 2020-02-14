@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/code
     docker:
-      - image: circleci/android:api-29
+      - image: circleci/android:api-29-node
     environment:
       JVM_OPTS: -Xmx3200m
     steps:
@@ -28,8 +28,6 @@ jobs:
             name: Upload to AppCenter
             command: |
               echo "Hello "
-              curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-              sudo apt-get install -y nodejs
               npm -v
               npm install -g appcenter-cli
 
