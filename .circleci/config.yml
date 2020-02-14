@@ -29,8 +29,8 @@ jobs:
             command: |
               echo "Hello "
               npm -v
-              npm install -g appcenter-cli
-
+              sudo npm install -g appcenter-cli
+              appcenter login -t a867ce9764313d1978972d8fe1648569bfec839d
 
 
       #      - run:
