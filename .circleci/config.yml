@@ -31,6 +31,7 @@ jobs:
               npm -v
               sudo npm install -g appcenter-cli
               appcenter login -t a867ce9764313d1978972d8fe1648569bfec839d
+              appcenter distribute release --app AlexandrLenivenko/Compass --file app/build/outputs/apk/release/app-release.apk --group "Collaborators"
 
 
       #      - run:
