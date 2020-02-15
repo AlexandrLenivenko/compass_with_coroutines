@@ -13,7 +13,7 @@ jobs:
       - run:
           name: Upload to Google Drive
           command: |
-            sudo apt-get install drive
+            sudo apt-get install gdrive /usr/local/bin/gdrive
       - run:
           name: Chmod permissions
           command: sudo chmod +x ./gradlew
