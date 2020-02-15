@@ -33,7 +33,7 @@ jobs:
       - run:
           name: Upload to Google Drive
           command: |
-            sudo install gdrive
+            sudo install drive
 #            appcenter login --token a867ce9764313d1978972d8fe1648569bfec839d
 #            appcenter distribute release --app AlexandrLenivenko/Compass --file app/build/outputs/apk/release/app-release.apk --group "Collaborators"
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
