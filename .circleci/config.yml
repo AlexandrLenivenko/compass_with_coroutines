@@ -24,12 +24,18 @@ jobs:
           name: Build apk
           command: ./gradlew assembleRelease
 
+#      - run:
+#            name: Upload to AppCenter
+#            command: |
+#              sudo npm install -g appcenter-cli
+#              appcenter login --token a867ce9764313d1978972d8fe1648569bfec839d
+#              appcenter distribute release --app AlexandrLenivenko/Compass --file app/build/outputs/apk/release/app-release.apk --group "Collaborators"
       - run:
-            name: Upload to AppCenter
-            command: |
-              sudo npm install -g appcenter-cli
-              appcenter login --token a867ce9764313d1978972d8fe1648569bfec839d
-              appcenter distribute release --app AlexandrLenivenko/Compass --file app/build/outputs/apk/release/app-release.apk --group "Collaborators"
+          name: Upload to Google Drive
+          command: |
+            sudo apt-get install gdrive
+#            appcenter login --token a867ce9764313d1978972d8fe1648569bfec839d
+#            appcenter distribute release --app AlexandrLenivenko/Compass --file app/build/outputs/apk/release/app-release.apk --group "Collaborators"
       - store_artifacts: # for display in Artifacts: https://circleci.com/docs/2.0/artifacts/
           path: app/build/outputs/apk/release
           destination: reports
